@@ -1,0 +1,39 @@
+name: Publish release
+on:
+  push:
+    branches: [main]
+    paths: [module.json]
+    tags: ['v*']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: publish-release
+  cancel-in-progress: false
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npm run lint
+      - run: npm test
+      - run: npm run check-lang
+      - name: Build and publish
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          version=$(node -p "JSON.parse(require('fs').readFileSync('module.json')).version")
+          tag="v$version"
+          if [ "$GITHUB_REF_TYPE" = tag ] && [ "$GITHUB_REF_NAME" != "$tag" ]; then
+            echo 'Tag does not match module version'; exit 1
+          fi
+          python3 tools/build-release.py --repository "$GITHUB_REPOSITORY" --tag "$tag"
+          if gh release view "$tag" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            echo "Release $tag already exists; leaving it unchanged"; exit 0
+          fi
+          gh release create "$tag" dist/module.json dist/pf2e-gestalt.zip --target "$GITHUB_SHA" --title "PF2e Gestalt $version" --notes-file RELEASE-NOTES.md

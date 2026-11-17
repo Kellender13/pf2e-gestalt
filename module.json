@@ -1,0 +1,67 @@
+{
+  "id": "pf2e-gestalt",
+  "title": "PF2e Gestalt",
+  "description": "Dual Class, Ancestry Paragon, Skill Paragon, and a Relic Manager for PF2e 8.7.0. Includes Creative Spark and Elements of Creation in the relic catalog.",
+  "version": "1.0.0",
+  "compatibility": {
+    "minimum": "14",
+    "maximum": "14"
+  },
+  "authors": [
+    {
+      "name": "Chris Marino"
+    },
+    {
+      "name": "Brianthas / Bryan H \u2014 upstream MIT code",
+      "url": "https://github.com/Brianthas/PF2e-Dual-Class"
+    }
+  ],
+  "esmodules": [
+    "scripts/module.mjs"
+  ],
+  "styles": [
+    "styles/dual-class.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "relationships": {
+    "systems": [
+      {
+        "id": "pf2e",
+        "type": "system",
+        "compatibility": {
+          "minimum": "8.7.0",
+          "maximum": "8.7.0"
+        }
+      }
+    ],
+    "requires": [
+      {
+        "id": "lib-wrapper",
+        "type": "module",
+        "compatibility": {
+          "minimum": "1.12"
+        }
+      }
+    ],
+    "recommends": [
+      {
+        "id": "pf2e-relics",
+        "type": "module",
+        "manifest": "https://github.com/TheErikkuBlade/pf2e-relics/releases/latest/download/module.json"
+      }
+    ]
+  },
+  "license": "LICENSE",
+  "readme": "README.md",
+  "url": "https://github.com/Kellender13/pf2e-gestalt",
+  "manifest": "https://github.com/Kellender13/pf2e-gestalt/releases/latest/download/module.json",
+  "download": "https://github.com/Kellender13/pf2e-gestalt/releases/download/v1.0.0/pf2e-gestalt.zip",
+  "bugs": "https://github.com/Kellender13/pf2e-gestalt/issues",
+  "changelog": "https://github.com/Kellender13/pf2e-gestalt/blob/main/CHANGELOG.md"
+}

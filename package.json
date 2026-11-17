@@ -1,0 +1,16 @@
+{
+  "name": "pf2e-gestalt",
+  "private": true,
+  "type": "module",
+  "description": "Dev tooling only. The module version lives in module.json.",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.9.1"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "check-lang": "node tools/check-lang.mjs",
+    "check-imports": "node tools/check-imports.mjs",
+    "test": "node tools/check-imports.mjs && node tools/test-reorder.mjs && node tools/test-fold.mjs && node --test tools/test-gestalt.mjs tools/test-paragon.mjs tools/test-relics.mjs tools/test-pathmuncher.mjs tools/test-pathmuncher-dual.mjs tools/test-startup.mjs tools/test-relic-presentation.mjs tools/test-relic-render.mjs tools/test-relic-permissions.mjs"
+  }
+}

@@ -2,14 +2,14 @@
 
 Dual Class, Ancestry Paragon, Skill Paragon, and item-based relic management for Pathfinder Second Edition in Foundry VTT.
 
-Version **1.0.0**. Developed and source-reviewed for **Foundry VTT 14 build 369 / PF2e 8.7.0**. The module owner reports successful live use. Local automated tests use mocked Foundry documents; not every class pairing or third-party module has been tested.
+Version **1.0.1**. Developed and source-reviewed for **Foundry VTT 14 build 369 / PF2e 8.7.0–8.7.1**. The module owner reports successful live use. Local automated tests use mocked Foundry documents; not every class pairing or third-party module has been tested.
 
 ## Requirements
 
 | Component | Requirement |
 | --- | --- |
 | Foundry VTT | Version 14; development target build 369 |
-| PF2e system | Exactly 8.7.0; other versions are intentionally gated |
+| PF2e system | 8.7.0 and 8.7.1; other versions are intentionally gated |
 | libWrapper | Required, 1.12 or newer |
 | PF2e Relics | Recommended for the full relic gift catalog |
 | Pathmuncher | Optional; integration supports exactly 2.0.1 |

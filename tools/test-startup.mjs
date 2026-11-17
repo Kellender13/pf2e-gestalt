@@ -7,8 +7,9 @@ globalThis.game={system:{id:'pf2e',version:'8.7.0'},release:{generation:14},vers
  modules:new Map([[ID,{}],['lib-wrapper',{active:true}]]),settings:{register:(_id,key,def)=>settings.set(key,def.default),get:(_id,key)=>settings.get(key)}};
 globalThis.ui={notifications:{info:()=>{},warn:()=>{},error:message=>{throw Error(message);}}};
 globalThis.libWrapper={register:(id,target,fn)=>{assert.equal(id,ID);if(wrappers.has(target))throw Error(`Duplicate registration: ${target}`);wrappers.set(target,fn);},unregister_all:()=>{rollback=true;wrappers.clear();}};
-await import('../scripts/module.mjs');
-test('complete init/setup/ready registers each libWrapper target once and enables sheet hooks',async()=>{
+for(const version of ['8.7.0','8.7.1'])test(`PF2e ${version}: complete startup registers wrappers once and enables sheet hooks`,async()=>{
+ hooks.clear();wrappers.clear();settings.clear();rollback=false;globalThis.game.system.version=version;
+ await import(`../scripts/module.mjs?version=${version}`);
  for(const name of ['init','setup','ready'])for(const fn of [...(hooks.get(name)??[])])await fn();
  assert.equal(rollback,false);assert.equal(globalThis.game.modules.get(ID).api.diagnose().ready,true);
  assert.deepEqual(globalThis.game.modules.get(ID).api.diagnose().errors,[]);

@@ -1,8 +1,8 @@
 {
   "id": "pf2e-gestalt",
   "title": "PF2e Gestalt",
-  "description": "Dual Class, Ancestry Paragon, Skill Paragon, and a Relic Manager for PF2e 8.7.0. Includes Creative Spark and Elements of Creation in the relic catalog.",
-  "version": "1.0.0",
+  "description": "Dual Class, Ancestry Paragon, Skill Paragon, and a Relic Manager for PF2e 8.7.0\u20138.7.1. Includes Creative Spark and Elements of Creation in the relic catalog.",
+  "version": "1.0.1",
   "compatibility": {
     "minimum": "14",
     "maximum": "14"
@@ -36,7 +36,7 @@
         "type": "system",
         "compatibility": {
           "minimum": "8.7.0",
-          "maximum": "8.7.0"
+          "maximum": "8.7.1"
         }
       }
     ],
@@ -61,7 +61,7 @@
   "readme": "README.md",
   "url": "https://github.com/Kellender13/pf2e-gestalt",
   "manifest": "https://github.com/Kellender13/pf2e-gestalt/releases/latest/download/module.json",
-  "download": "https://github.com/Kellender13/pf2e-gestalt/releases/download/v1.0.0/pf2e-gestalt.zip",
+  "download": "https://github.com/Kellender13/pf2e-gestalt/releases/download/v1.0.1/pf2e-gestalt.zip",
   "bugs": "https://github.com/Kellender13/pf2e-gestalt/issues",
   "changelog": "https://github.com/Kellender13/pf2e-gestalt/blob/main/CHANGELOG.md"
 }

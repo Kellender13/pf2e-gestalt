@@ -1,17 +1,9 @@
-# PF2e Gestalt 1.0.0
+# PF2e Gestalt 1.0.1
 
-First public release, built from the user-tested 0.3.7 preview.
+Compatibility update for **PF2e 8.7.1** on Foundry VTT 14. PF2e 8.7.0 remains supported.
 
-- Dual Class with separate class feats, features, DCs and a second-class boost selector.
-- Ancestry Paragon and Skill Paragon automation.
-- Relics configured on individual items, with aspect limits and level-based gift allowances.
-- Separate GM permissions for players to select aspects and/or gifts.
-- Optional Pathmuncher 2.0.1 integration.
+Updates the manifest range and runtime version gate so the module loads after upgrading the system. Existing character data, relics and settings are retained. No data migration is required.
 
-Requires Foundry VTT 14 and PF2e 8.7.0, with libWrapper enabled. The development target is Foundry 14 build 369. Enable PF2e Relics for the full gift catalog.
+Reviewed the upstream 8.7.0–8.7.1 source changes. All 104 local behavioral checks, lint and translation checks pass, including full startup on both system versions. Live Foundry testing of 8.7.1 remains pending.
 
-**Install:** Copy the URL of the attached `module.json` into Foundry's Install Module manifest field. Do not use GitHub's automatically generated source ZIP as the module package.
-
-**Upgrade:** Existing previews use the same module ID and retain saved settings and character/item data. For manual installation, replace `Data/modules/pf2e-gestalt` with the folder in the attached `pf2e-gestalt.zip`, restart the world, and have all clients reload.
-
-103 local behavioral checks pass. The module owner reports successful live use; not all class pairings or third-party modules have been exhaustively tested. Spellcasting setup remains manual. See README and VALIDATION for limitations.
+Update PF2e Gestalt through Foundry's module updater, restart the world, and have all clients refresh. The installation manifest URL is unchanged.

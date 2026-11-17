@@ -1,5 +1,12 @@
 # Changes
 
+## 1.0.1 — 2026-11-17
+
+- Support PF2e 8.7.1 while retaining 8.7.0 compatibility on Foundry 14.
+- Update both the manifest compatibility range and the runtime gate that otherwise disables the module after the system update.
+- Review upstream 8.7.0–8.7.1 changes and exercise full module startup on both supported versions.
+- 104 local behavioral checks pass. No new live Foundry 8.7.1 session was available for testing.
+
 ## 1.0.0 — 2026-11-17
 
 First public release, based on the user-tested 0.3.7 build.

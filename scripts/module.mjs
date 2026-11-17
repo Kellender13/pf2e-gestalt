@@ -14,12 +14,12 @@ import { registerSkillCounter, tallyTrainedSkills } from "./skills.mjs";
 import { registerMismatchWarning } from "./mismatch.mjs";
 import { registerClassChoices } from "./class-choices.mjs";
 
-const status = { ready: false, errors: [], target: "Foundry 14.369 / PF2e 8.7.0" };
+const status = { ready: false, errors: [], target: "Foundry 14.369 / PF2e 8.7.0–8.7.1" };
 Hooks.once("init", registerSettings);
 Hooks.once("setup", () => {
   const fail = (message) => { status.errors.push(message); console.error(`${MODULE_ID} | ${message}`); };
-  if (game.system.id !== "pf2e" || game.system.version !== "8.7.0" || Number(game.release.generation) !== 14) {
-    fail("This release targets PF2e 8.7.0 on Foundry 14. Patches were not enabled.");
+  if (game.system.id !== "pf2e" || !["8.7.0", "8.7.1"].includes(game.system.version) || Number(game.release.generation) !== 14) {
+    fail("This release targets PF2e 8.7.0–8.7.1 on Foundry 14. Patches were not enabled.");
     return;
   }
   if (!game.modules.get("lib-wrapper")?.active) { fail("Install and enable libWrapper."); return; }

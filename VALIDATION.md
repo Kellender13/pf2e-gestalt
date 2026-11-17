@@ -1,4 +1,4 @@
-# Validation — 1.0.0
+# Validation — 1.0.1
 
 Reviewed against the exact public PF2e tag `pf2e-8.7.0`, commit `52dfeee703b887237f5e454747bcae45b136f9af`.
 
@@ -11,7 +11,7 @@ Source paths inspected:
 - `static/templates/actors/character/tabs/character.hbs`: second-class cell anchor.
 
 Checks passed locally:
-- 103 behavioral cases: 7 feat-order cases, 10 skill-accounting cases, 10 dual-class/boost cases, 19 Paragon cases, 20 relic cases, and 15 Pathmuncher bridge/processing cases, 2 startup/composed-preparation cases, 7 relic-presentation cases, and 1 read-only relic-render case, and 12 player-permission cases.
+- 104 behavioral cases: 7 feat-order cases, 10 skill-accounting cases, 10 dual-class/boost cases, 19 Paragon cases, 20 relic cases, and 15 Pathmuncher bridge/processing cases, 3 startup/composed-preparation cases, 7 relic-presentation cases, and 1 read-only relic-render case, and 12 player-permission cases.
 - All local named imports resolve.
 - ESLint passes with no warnings.
 - Every requested translation key exists. Unused inherited keys are harmless and reported by the checker.
@@ -87,3 +87,7 @@ Verify immediate GM permission persistence, detached player DOM rendering, the D
 ## 1.0.0 release status
 
 On November 17, 2026, the module owner reported that the module works well and requested publication. This is user-reported live validation, not an exhaustive compatibility certification. The automated checks use mocked Foundry documents. All class combinations, third-party sheet modules and concurrent multiplayer changes have not been exhaustively tested.
+
+## 1.0.1 — PF2e 8.7.1
+
+Compared upstream tag pf2e-8.7.0 to pf2e-8.7.1 (397f125aea87e6d6fa36e878c9c07d0e672826cf). Character document changes concern rune attack notes; class/base item documents, choice-set rules and character/item sheet templates used by the module are unchanged. Reviewed actor helper/base changes and physical usage changes. Existing module wrappers and field usage remain applicable. Full mocked init/setup/ready runs on both 8.7.0 and 8.7.1. No live 8.7.1 test world was available; source review and local tests are not an exhaustive runtime certification.
